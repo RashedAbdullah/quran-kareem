@@ -1,0 +1,12 @@
+@font-face {
+  font-family: hafs;
+  src: url(./assets/fonts/KFGQPC.otf);
+}
+
+body {
+  font-family: hafs;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
