@@ -1,4 +1,5 @@
 import SuggestedSurah from "../../components/suggestedSurah/suggestedSurah";
+import SurahNames from "../../components/surahNames/surah";
 import { useQuranQuery } from "../../customHooks/useQuranQuery";
 import { useTranslationsQuery } from "../../customHooks/useTranslationsQuery";
 import EntryMsg from "./../../components/entryMsg/entryMsg";
@@ -12,6 +13,7 @@ const Home = () => {
     <div>
       <EntryMsg />
       <SuggestedSurah />
+      <SurahNames />
     </div>
   );
 };

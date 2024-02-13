@@ -13,7 +13,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="">
+    <div>
       {/* Mobile menu */}
       <MobileMenu open={open} setOpen={setOpen} classNames={classNames} />
 
@@ -22,7 +22,7 @@ export default function Header() {
           aria-label="Top"
           className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
         >
-          <div className="">
+          <div>
             <div className="flex h-16 justify-between items-center">
               {!open && (
                 <button
