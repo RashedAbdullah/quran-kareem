@@ -6,8 +6,7 @@ export default {
       colors: {
         primary: "#043939",
         primaryHover: "#043333",
-        secondary: "",
-        backgroundColor: "",
+        secondary: "#64ccc5",
       },
     },
   },

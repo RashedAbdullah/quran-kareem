@@ -8,7 +8,7 @@ const Home = () => {
   const { quran, error } = useQuranQuery();
   const { translations, errors } = useTranslationsQuery("bn.bengali");
   console.log(translations);
-  // console.log(quran);
+  console.log(quran);
   return (
     <div>
       <EntryMsg />

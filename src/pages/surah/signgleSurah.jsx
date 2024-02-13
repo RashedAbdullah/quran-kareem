@@ -1,39 +1,41 @@
+import { useState } from "react";
+import SideBarSurahNames from "./sidebarSurahName";
+import { IoIosArrowBack } from "react-icons/io";
+import { IoIosArrowForward } from "react-icons/io";
+import ReadingOrTranslation from "./readingOrTranslatiion";
+
 const SingleSurah = () => {
+  const [isShowSurah, setIsShowSurah] = useState(true);
+
   return (
-    <div className="py-20 grid grid-cols-12 gap-4">
-      <div className="AllNamesOfSurah col-span-2">
-        <div></div>
+    <div className="py-10 lg:py-20">
+      <div className="flex justify-center align-middle">
+        <div>
+          <a className="border border-primary py-1 px-10 text-xl" href="">
+            القراءة
+          </a>
+        </div>
+        <div>
+          <a className="border border-primary py-1 px-10 text-xl" href="">
+            الترجمة
+          </a>
+        </div>
       </div>
-      <div className="singleSurahDetails col-span-8 text-center">
-        <div className="mt-4">
-          <h3 className="text-3xl">سُورَةُ آلِ عِمۡرَانَ</h3>
+      <div className="grid grid-cols-12 gap-4">
+        <div className="AllNamesOfSurah col-span-2">
+          <button
+            onClick={() => setIsShowSurah(!isShowSurah)}
+            className="fixed top-5 right-0 text-white"
+          >
+            {isShowSurah ? (
+              <IoIosArrowForward size="25px" />
+            ) : (
+              <IoIosArrowBack size="25px" />
+            )}
+          </button>
+          <SideBarSurahNames isShowSurah={isShowSurah} />
         </div>
-        <div className="mt-5">
-          <h4 className="text-2xl">بِسْمِ اللَّـهِ الرَّحْمَـٰنِ الرَّحِيمِ</h4>
-        </div>
-        <div className="mt-5 text-2xl leading-10 px-20">
-          <p className="">
-            وَاِذۡ قَالَ مُوۡسٰى لِقَوۡمِهٖ يٰقَوۡمِ لِمَ تُؤۡذُوۡنَنِىۡ وَقَد
-            تَّعۡلَمُوۡنَ اَنِّىۡ رَسُوۡلُ اللّٰهِ اِلَيۡكُمۡؕ فَلَمَّا
-            زَاغُوۡۤا اَزَاغَ اللّٰهُ قُلُوۡبَهُمۡ​ؕ وَاللّٰهُ لَا يَهۡدِى
-            الۡقَوۡمَ الۡفٰسِقِيۡنَ‏ ٥ وَاِذۡ قَالَ عِيۡسَى ابۡنُ مَرۡيَمَ
-            يٰبَنِىۡۤ اِسۡرَآءِيۡلَ اِنِّىۡ رَسُوۡلُ اللّٰهِ اِلَيۡكُمۡ
-            مُّصَدِّقًا لِّمَا بَيۡنَ يَدَىَّ مِنَ التَّوۡرٰٮةِ وَمُبَشِّرًۢا
-            بِرَسُوۡلٍ يَّاۡتِىۡ مِنۡۢ بَعۡدِى اسۡمُهٗۤ اَحۡمَدُ​ؕ فَلَمَّا
-            جَآءَهُمۡ بِالۡبَيِّنٰتِ قَالُوۡا هٰذَا سِحۡرٌ مُّبِيۡنٌ‏ ٦ وَمَنۡ
-            اَظۡلَمُ مِمَّنِ افۡتَـرٰى عَلَى اللّٰهِ الۡكَذِبَ وَهُوَ يُدۡعٰٓى
-            اِلَى الۡاِسۡلَامِ​ ؕ وَاللّٰهُ لَا يَهۡدِى الۡقَوۡمَ الظّٰلِمِيۡنَ‏
-            ٧ يُرِيۡدُوۡنَ لِيُطۡفِــُٔـوۡا نُوۡرَ اللّٰهِ بِاَ فۡوَاهِهِمْ
-            وَاللّٰهُ مُتِمُّ نُوۡرِهٖ وَلَوۡ كَرِهَ الۡكٰفِرُوۡنَ‏ ٨ هُوَ
-            الَّذِىۡۤ اَرۡسَلَ رَسُوۡلَهٗ بِالۡهُدٰى وَدِيۡنِ الۡحَـقِّ
-            لِيُظۡهِرَهٗ عَلَى الدِّيۡنِ كُلِّهٖ وَلَوۡ كَرِهَ الۡمُشۡرِكُوۡنَ‏
-            ٩ يٰۤاَيُّهَا الَّذِيۡنَ اٰمَنُوۡا هَلۡ اَدُلُّكُمۡ عَلٰى تِجَارَةٍ
-            تُنۡجِيۡكُمۡ مِّنۡ عَذَابٍ اَلِيۡمٍ‏ ١٠ تُؤۡمِنُوۡنَ بِاللّٰهِ
-            وَرَسُوۡلِهٖ وَتُجَاهِدُوۡنَ فِىۡ سَبِيۡلِ اللّٰهِ بِاَمۡوَالِكُمۡ
-            وَاَنۡفُسِكُمۡ​ؕ ذٰلِكُمۡ خَيۡرٌ لَّـكُمۡ اِنۡ كُنۡتُمۡ
-            تَعۡلَمُوۡنَۙ‏ ﻿﻿ ١١
-          </p>
-        </div>
+        <ReadingOrTranslation />
       </div>
     </div>
   );
