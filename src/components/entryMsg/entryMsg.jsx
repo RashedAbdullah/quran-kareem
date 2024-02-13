@@ -2,7 +2,7 @@ import Search from "../search/search";
 
 const EntryMsg = () => {
   return (
-    <div className="bg-[#043939] text-white">
+    <div className="bg-[#043939] text-white pt-14">
       <div className=" lg:w-[40vw] m-auto p-10">
         <h3 className="text-3xl lg:text-4xl">مرحبا بك في ساحة القرآن الكريم</h3>
         <div className=" text-lg mt-4">

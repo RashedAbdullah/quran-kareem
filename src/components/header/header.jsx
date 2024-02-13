@@ -13,7 +13,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div>
+    <div className=" lg:fixed w-full">
       {/* Mobile menu */}
       <MobileMenu open={open} setOpen={setOpen} classNames={classNames} />
 
@@ -50,19 +50,19 @@ export default function Header() {
 
               {/* Flyout menus */}
               <Popover.Group className="hidden lg:ml-8 lg:block lg:self-center">
-                <div className="flex h-full space-x-8">
+                <div className="flex h-full space-x-8 gap-8">
                   {navigations.map((page) => (
                     <NavLink
                       key={page.name}
                       to={page.navlink}
-                      className="flex items-center text-sm font-medium text-white hover:text-gray-400"
+                      className="flex items-center text-lg font-medium text-white hover:text-gray-400"
                     >
                       {page.name}
                     </NavLink>
                   ))}
                 </div>
               </Popover.Group>
-              <div>
+              <div className="text-lg">
                 <button>Light | Dark</button>
               </div>
             </div>

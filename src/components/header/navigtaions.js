@@ -1,4 +1,5 @@
 export const navigations = [
-  { name: "Home", navlink: "/" },
-  { name: "About", navlink: "/about" },
+  { name: "الرسمية", navlink: "/" },
+  { name: "السُوَرِ القُرْآنِية", navlink: "/singleSurah" },
+  { name: "معلومات عنا", navlink: "/about" },
 ];
