@@ -13,7 +13,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className=" lg:fixed w-full">
+    <div className=" lg:fixed w-full z-10">
       {/* Mobile menu */}
       <MobileMenu open={open} setOpen={setOpen} classNames={classNames} />
 

@@ -8,6 +8,10 @@ export default {
         primaryHover: "#043333",
         secondary: "#64ccc5",
       },
+      fontFamily: {
+        hafs: ["anotherHafs", "hafs"],
+        amiri: ["Amiri"],
+      },
     },
   },
   plugins: [],

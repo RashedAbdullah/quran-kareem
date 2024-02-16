@@ -1,7 +1,6 @@
-
 const ReadingOrTranslation = () => {
   return (
-    <div className="singleSurahDetails col-span-12 lg:col-span-8 text-center min-h-screen mt-5">
+    <div className="singleSurahDetails col-span-12 lg:col-span-8 text-center">
       <div className="mt-4">
         <h3 className="text-3xl">سُورَةُ آلِ عِمۡرَانَ</h3>
       </div>

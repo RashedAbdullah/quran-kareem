@@ -6,6 +6,8 @@ import { routes } from "./routes/routes";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={routes} />
+    <div dir="rtl" className=" bg-secondary font-hafs">
+      <RouterProvider router={routes}></RouterProvider>
+    </div>
   </React.StrictMode>
 );
