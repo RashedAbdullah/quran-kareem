@@ -7,7 +7,7 @@ import Header from "../../components/header/header";
 import Footer from "../../components/footer/footer";
 
 const SideBarSurahNames = () => {
-  const [isShowSidebar, setIsShowSidebar] = useState(false);
+  const [isShowSidebar, setIsShowSidebar] = useState(true);
   return (
     <div className=" min-h-screen">
       <Header />
