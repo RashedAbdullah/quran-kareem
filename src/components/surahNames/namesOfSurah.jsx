@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { getEngToArNumber } from "../../customHooks/getEngToArNumber";
+import { motion } from "framer-motion";
 
 const NamesOfSurah = ({ quran }) => {
   console.log(getEngToArNumber("1234567890"));
@@ -7,7 +8,8 @@ const NamesOfSurah = ({ quran }) => {
   return (
     <div className="my-10 grid lg:grid-cols-3 gap-3">
       {quran?.map((surah) => (
-        <div
+        <a
+          href="#"
           key={surah.name}
           className="flex items-center justify-between px-5 py-6 text-xl rounded bg-primary text-white cursor-pointer transition ease-in-out hover:-translate-y-1 duration-300 hover:bg-primaryHover"
         >
@@ -32,7 +34,7 @@ const NamesOfSurah = ({ quran }) => {
               آيات
             </div>
           </div>
-        </div>
+        </a>
       ))}
     </div>
   );

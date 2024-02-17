@@ -16,7 +16,6 @@ const Home = () => {
     <div className=" selection:bg-secondary selection:text-primary">
       <Header />
       <ScrollRestoration />
-      <Outlet />
       <EntryMsg />
       <SuggestedSurah />
       <SurahNames quran={quran} />
