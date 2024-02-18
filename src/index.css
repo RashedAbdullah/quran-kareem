@@ -10,6 +10,10 @@
   src: url(./assets/fonts/UthmanicHafs1Ver18.woff2);
 }
 
+/* .light {
+  @apply;
+} */
+
 /* body {
   font-family: "Amiri", serif;
 } */

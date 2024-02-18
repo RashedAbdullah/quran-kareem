@@ -3,10 +3,15 @@ import Home from "../pages/home/home";
 import SingleSurah from "../pages/surah/signgleSurah";
 import SideBarSurahNames from "../pages/surah/sidebarSurahName";
 import Layout from "../layouts/layout";
+import ThemeProvider from "../contexts/themeProvider";
 
 const routes = createBrowserRouter([
   {
-    element: <Layout />,
+    element: (
+      <ThemeProvider>
+        <Layout />
+      </ThemeProvider>
+    ),
     errorElement: <h2>404 NOT FOUND</h2>,
     children: [
       {
