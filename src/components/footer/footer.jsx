@@ -4,7 +4,7 @@ import { FaFacebook } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className=" bg-primaryHover text-white py-10 text-lg px-20">
+    <div className=" bg-primaryHover text-textWhite py-10 text-lg px-20">
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 py-5">
         <ul className="">
           <li>الصفحة الرئيسة</li>

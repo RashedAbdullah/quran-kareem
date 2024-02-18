@@ -17,7 +17,7 @@ export default function Header() {
       {/* Mobile menu */}
       <MobileMenu open={open} setOpen={setOpen} classNames={classNames} />
 
-      <header className="relative bg-[#002C2C] text-white">
+      <header className="relative bg-primaryHover text-white">
         <nav
           aria-label="Top"
           className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
@@ -27,7 +27,7 @@ export default function Header() {
               {!open && (
                 <button
                   type="button"
-                  className="relative rounded-md bg-white p-2 text-gray-400 lg:hidden"
+                  className="relative rounded-md bg-textWhite p-2 text-gray-400 lg:hidden"
                   onClick={() => setOpen(true)}
                 >
                   <span className="absolute -inset-0.5" />
@@ -55,7 +55,7 @@ export default function Header() {
                     <NavLink
                       key={page.name}
                       to={page.navlink}
-                      className="flex items-center text-lg font-medium text-white hover:text-gray-400"
+                      className="flex items-center text-lg font-medium text-textWhite hover:text-gray-400"
                     >
                       {page.name}
                     </NavLink>

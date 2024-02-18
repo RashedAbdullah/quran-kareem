@@ -1,20 +1,62 @@
+import { useState } from "react";
 import { IoSearch } from "react-icons/io5";
 
 const Search = () => {
+  const [isShowSuggestions, setIsShowSuggestions] = useState(false);
+  const [input, setInput] = useState("");
+  console.log(input);
+  const handleInputChange = (e) => {
+    setInput(e.target.value);
+    if (e.target.value.length) {
+      setIsShowSuggestions(true);
+    } else {
+      setIsShowSuggestions(false);
+    }
+  };
   return (
-    <div className="flex pb-10 text-black">
-      <form className="m-auto bg-[#f0f0f0] rounded-full px-5 py-1 lg:w-[40vw] flex">
-        <div className="w-full">
-          <input
-            type="text"
-            className="w-full text-xl p-1 bg-transparent outline-none"
-            placeholder="ابحث عن سورة أو آية"
-          />
+    <div className="">
+      <div className="flex pb-10 text-textBlack">
+        <form className="m-auto bg-[#f0f0f0] rounded-full px-5 py-1 lg:w-[40vw] flex">
+          <div className="w-full">
+            <input
+              type="text"
+              className="w-full text-xl p-1 bg-transparent outline-none"
+              placeholder="ابحث عن سورة أو آية"
+              onChange={handleInputChange}
+              value={input}
+            />
+          </div>
+          <button disabled>
+            <IoSearch color="gray" size="25px" />
+          </button>
+        </form>
+      </div>
+      {isShowSuggestions && (
+        <div className="bg-textWhite text-textBlack m-auto px-5 py-1 lg:w-[37vw] relative top-[-40px]">
+          <div className=" text-lg">
+            <div>
+              <a href="">
+                <h3>سورة الفاتحة المكية</h3>
+              </a>
+            </div>
+            <div>
+              <a href="">
+                <h3>سورة الفاتحة المكية</h3>
+              </a>
+            </div>
+            <div>
+              <a href="">
+                <h3>سورة الفاتحة المكية</h3>
+              </a>
+            </div>
+            <div>
+              <a href="">
+                <h3>سورة الفاتحة المكية</h3>
+              </a>
+            </div>
+          </div>
         </div>
-        <button>
-          <IoSearch color="gray" size="25px" />
-        </button>
-      </form>
+      )}
     </div>
   );
 };

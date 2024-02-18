@@ -2,10 +2,9 @@ import { Fragment } from "react";
 import { Dialog, Tab, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { NavLink } from "react-router-dom";
-import { navigations } from './navigtaions';
+import { navigations } from "./navigtaions";
 
-const MobileMenu = ({open, setOpen, classNames}) => {
-
+const MobileMenu = ({ open, setOpen, classNames }) => {
   return (
     <>
       {/* Mobile menu */}
@@ -20,7 +19,7 @@ const MobileMenu = ({open, setOpen, classNames}) => {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <div className="fixed inset-0 bg-black bg-opacity-25" />
+            <div className="fixed inset-0 bg-textBlack bg-opacity-25" />
           </Transition.Child>
 
           <div className="fixed inset-0 z-40 flex">
@@ -36,7 +35,7 @@ const MobileMenu = ({open, setOpen, classNames}) => {
             >
               <Dialog.Panel
                 onClick={() => setOpen(false)}
-                className="relative flex max-w-xs flex-col overflow-y-auto bg-black text-white bg-opacity-80 pb-12 shadow-xl"
+                className="relative flex max-w-xs flex-col overflow-y-auto bg-textBlack text-textWhite bg-opacity-80 pb-12 shadow-xl"
               >
                 <div className="flex px-4 pb-2 pt-5">
                   <button
@@ -56,7 +55,7 @@ const MobileMenu = ({open, setOpen, classNames}) => {
                       <NavLink
                         to={page.navlink}
                         onClick={() => setOpen(false)}
-                        className="-m-2 block p-2 font-medium text-white w-60 hover:bg-teal-950 transition "
+                        className="-m-2 block p-2 font-medium text-textWhite w-60 hover:bg-teal-950 transition "
                       >
                         {page.name}
                       </NavLink>

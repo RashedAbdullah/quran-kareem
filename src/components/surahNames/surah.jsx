@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import Title from "./title";
 import NamesOfSurah from "./namesOfSurah";
 

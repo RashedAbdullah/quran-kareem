@@ -15,7 +15,6 @@ const useQuranQuery = () => {
       setQuran(data.data.surahs);
     } catch (err) {
       setError(err);
-      console.log(err);
     }
   };
   useEffect(() => {

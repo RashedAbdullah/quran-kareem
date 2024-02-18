@@ -15,7 +15,6 @@ const useTranslationsQuery = (translation) => {
       setTranslations(data.data.surahs);
     } catch (err) {
       setErrors(err);
-      console.log(err);
     }
   };
   useEffect(() => {

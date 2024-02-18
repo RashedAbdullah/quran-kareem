@@ -1,10 +1,7 @@
 /* eslint-disable react/prop-types */
 import { getEngToArNumber } from "../../customHooks/getEngToArNumber";
-import { motion } from "framer-motion";
 
 const NamesOfSurah = ({ quran }) => {
-  console.log(getEngToArNumber("1234567890"));
-
   return (
     <div className="my-10 grid lg:grid-cols-3 gap-3">
       {quran?.map((surah) => (

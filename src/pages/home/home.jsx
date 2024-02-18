@@ -14,12 +14,9 @@ const Home = () => {
   // console.log(quran);
   return (
     <div className=" selection:bg-secondary selection:text-primary">
-      <Header />
-      <ScrollRestoration />
       <EntryMsg />
       <SuggestedSurah />
       <SurahNames quran={quran} />
-      <Footer />
     </div>
   );
 };
