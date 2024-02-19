@@ -6,13 +6,13 @@ const useQuranQuery = () => {
 
   const getQuran = async () => {
     try {
-      const url = `https://api.alquran.cloud/v1/quran/quran-uthmani`;
+      const url = `https://api.alquran.cloud/v1/surah`;
       const response = await fetch(url);
       if (!response.status) {
         throw new Error("Failed to fetching data...");
       }
       const data = await response.json();
-      setQuran(data.data.surahs);
+      setQuran(data.data);
     } catch (err) {
       setError(err);
     }

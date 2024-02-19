@@ -12,7 +12,6 @@ import About from "./../pages/about/about";
 import PrivateRoutes from "./privateRoutes";
 import { AnimatePresence } from "framer-motion";
 
-const translation = "bn.bengali";
 const routes = createBrowserRouter([
   {
     element: (
@@ -34,9 +33,13 @@ const routes = createBrowserRouter([
       },
       {
         path: "/singleSurah",
-        element: <SideBarSurahNames />,
+        element: (
+          <AnimatePresence>
+            <SideBarSurahNames />
+          </AnimatePresence>
+        ),
         loader: () =>
-          fetch(`https://api.alquran.cloud/v1/quran/${translation}`),
+          fetch(`https://api.alquran.cloud/v1/surah`),
         children: [
           {
             path: "/singleSurah/:id",
@@ -47,7 +50,7 @@ const routes = createBrowserRouter([
             ),
             loader: ({ params }) =>
               fetch(
-                `https://api.alquran.cloud/v1/quran/${translation}/${params.id}`
+                `https://api.alquran.cloud/v1/surah/${params.id}`
               ),
           },
         ],
@@ -56,7 +59,9 @@ const routes = createBrowserRouter([
         path: "/about",
         element: (
           <PrivateRoutes>
-            <About />
+            <AnimatePresence mode="wait">
+              <About />
+            </AnimatePresence>
           </PrivateRoutes>
         ),
       },

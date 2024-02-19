@@ -4,10 +4,6 @@ export default {
   darkMode: "class",
   theme: {
     extend: {
-      // container: {
-      //   center: true,
-      //   padding: "10rem",
-      // },
       colors: {
         primary: "#043939",
         primaryHover: "#043333",
@@ -18,6 +14,8 @@ export default {
       fontFamily: {
         hafs: ["anotherHafs", "hafs"],
         amiri: ["Amiri"],
+        me_quran: ["me_quran"],
+        bsm: ["QCF_BSML"],
       },
     },
   },

@@ -2,11 +2,11 @@
 import Title from "./title";
 import NamesOfSurah from "./namesOfSurah";
 
-const SurahNames = ({quran}) => {
+const SurahNames = ({ quran }) => {
   return (
     <div className=" w-5/6 mx-auto">
       <Title />
-      <NamesOfSurah quran={quran}/>
+      <NamesOfSurah quran={quran}  />
     </div>
   );
 };

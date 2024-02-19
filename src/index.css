@@ -10,13 +10,15 @@
   src: url(./assets/fonts/UthmanicHafs1Ver18.woff2);
 }
 
-/* .light {
-  @apply;
-} */
+@font-face {
+  font-family: me_quran;
+  src: url('./assets//fonts/me_quran.ttf');
+}
 
-/* body {
-  font-family: "Amiri", serif;
-} */
+@font-face {
+  font-family: QCF_BSML;
+  src: url('./assets/fonts/QCF_BSML.ttf');
+}
 
 ::-webkit-scrollbar {
   display: none;
