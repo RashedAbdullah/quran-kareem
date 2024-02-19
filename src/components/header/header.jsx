@@ -38,7 +38,7 @@ export default function Header() {
 
               {/* Logo */}
               <div className="ml-4 flex lg:ml-0">
-                <NavLink to="/">
+                <NavLink to="/signin">
                   <span className="sr-only">Page logo</span>
                   <img
                     className="h-8 w-auto rounded-full"

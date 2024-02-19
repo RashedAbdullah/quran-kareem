@@ -4,6 +4,8 @@ import SingleSurah from "../pages/surah/signgleSurah";
 import SideBarSurahNames from "../pages/surah/sidebarSurahName";
 import Layout from "../layouts/layout";
 import ThemeProvider from "../contexts/themeProvider";
+import SignIn from "./../auth/signin";
+import SignUp from "../auth/signup";
 
 const translation = "bn.bengali";
 const routes = createBrowserRouter([
@@ -36,6 +38,14 @@ const routes = createBrowserRouter([
         ],
       },
     ],
+  },
+  {
+    path: "/signin",
+    element: <SignIn />,
+  },
+  {
+    path: "/signup",
+    element: <SignUp/>,
   },
 ]);
 
