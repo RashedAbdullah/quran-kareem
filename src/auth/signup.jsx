@@ -1,20 +1,25 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import GoogleGithub from "./googleGithub";
 import { useState } from "react";
 import { signupWithEmailAndPassword } from "../firebase/firebase";
+import GoogleFacebook from "./googleFacebook";
 
 const SignUp = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const handleSignUp = (e) => {
+  const handleSignUp = async (e) => {
     e.preventDefault();
-    signupWithEmailAndPassword(email, password);
+    try {
+      await signupWithEmailAndPassword(email, password);
+      navigate("/signin");
+    } catch (err) {
+      console.log(err);
+    }
   };
   return (
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-5 lg:px-8">
-        <GoogleGithub />
+        <GoogleFacebook />
 
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <h2 className="mt-1 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">

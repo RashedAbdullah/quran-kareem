@@ -2,10 +2,24 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 import { TbHomeMove } from "react-icons/tb";
-import GoogleGithub from "./googleGithub";
+import { useState } from "react";
+import { signInWithEmail } from "../firebase/firebase";
+import GoogleFacebook from "./googleFacebook";
 
 const SignIn = () => {
   const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSignInForm = async (e) => {
+    e.preventDefault();
+    try {
+      await signInWithEmail(email, password);
+      navigate("/");
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return (
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
@@ -16,7 +30,7 @@ const SignIn = () => {
         </div>
 
         <div className="mt-5 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form className="space-y-5">
+          <form onSubmit={handleSignInForm} className="space-y-5">
             <div>
               <label
                 htmlFor="name"
@@ -48,6 +62,8 @@ const SignIn = () => {
                   type="email"
                   autoComplete="email"
                   className="p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 outline-none focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
             </div>
@@ -61,12 +77,12 @@ const SignIn = () => {
                   Password
                 </label>
                 <div className="text-sm">
-                  <a
-                    href="#"
+                  <NavLink
+                    to="/reset"
                     className="font-semibold text-green-500 hover:text-green-500"
                   >
                     Forgot password?
-                  </a>
+                  </NavLink>
                 </div>
               </div>
               <div className="mt-2">
@@ -76,6 +92,8 @@ const SignIn = () => {
                   type="password"
                   autoComplete="current-password"
                   className="p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
             </div>
@@ -90,7 +108,7 @@ const SignIn = () => {
             </div>
           </form>
 
-          <GoogleGithub />
+          <GoogleFacebook />
 
           <p className="mt-5 text-center text-sm text-gray-500">
             Haven't accont?{" "}

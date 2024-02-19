@@ -3,6 +3,7 @@ import Footer from "../components/footer/footer";
 import { Outlet, ScrollRestoration } from "react-router-dom";
 import { ThemeContext } from "../contexts/themeProvider";
 import { useContext } from "react";
+import { motion } from "framer-motion";
 
 const Layout = () => {
   const { isDark, setIsDark } = useContext(ThemeContext);

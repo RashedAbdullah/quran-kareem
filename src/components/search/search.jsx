@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { IoSearch } from "react-icons/io5";
+import { signOut } from "firebase/auth";
 
 const Search = () => {
   const [isShowSuggestions, setIsShowSuggestions] = useState(false);
   const [input, setInput] = useState("");
-  console.log(input);
   const handleInputChange = (e) => {
     setInput(e.target.value);
     if (e.target.value.length) {

@@ -1,15 +1,20 @@
 import { useState } from "react";
 import { Popover } from "@headlessui/react";
 import { Bars3Icon } from "@heroicons/react/24/outline";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import MobileMenu from "./mobileMenu";
 import { navigations } from "./navigtaions";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../firebase/firebase";
+import { FaSignInAlt, FaUserAlt } from "react-icons/fa";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 export default function Header() {
+  const navigate = useNavigate();
+  const [user] = useAuthState(auth);
   const [open, setOpen] = useState(false);
 
   return (
@@ -36,16 +41,28 @@ export default function Header() {
                 </button>
               )}
 
-              {/* Logo */}
+              {/* User info */}
               <div className="ml-4 flex lg:ml-0">
-                <NavLink to="/signin">
-                  <span className="sr-only">Page logo</span>
-                  <img
-                    className="h-8 w-auto rounded-full"
-                    src="https://scontent.fdac24-2.fna.fbcdn.net/v/t39.30808-6/426427521_3498511290438956_7462136380476691883_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=efb6e6&_nc_eui2=AeG2eMJCCgsrJ0nwsWScoj16aLHOciArEBposc5yICsQGuetMaRwMDyD0MvMMbtLp3IfbDzhsyjMIAdvJMADQ_aR&_nc_ohc=Fsl_KcEJWSMAX88dkCL&_nc_ht=scontent.fdac24-2.fna&oh=00_AfB2Qou9hens7rNKre0lUSbo4ZeBiQGr8DJ-Nf7appkanw&oe=65CF9D9D"
-                    alt=""
-                  />
-                </NavLink>
+                {user ? (
+                  <>
+                    <button onClick={() => navigate("/user")}>
+                      {user.photoURL ? (
+                        <img
+                          src={user.photoURL}
+                          alt="user profile"
+                          className="h-10 w-10 rounded-full"
+                        />
+                      ) : (
+                        <FaUserAlt size={"25px"} />
+                      )}
+                    </button>
+                  </>
+                ) : (
+                  <NavLink to="/signin">
+                    <span className="sr-only">sign in</span>
+                    <FaSignInAlt size={"25px"} />
+                  </NavLink>
+                )}
               </div>
 
               {/* Flyout menus */}

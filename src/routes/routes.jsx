@@ -6,20 +6,31 @@ import Layout from "../layouts/layout";
 import ThemeProvider from "../contexts/themeProvider";
 import SignIn from "./../auth/signin";
 import SignUp from "../auth/signup";
+import UserProfile from "../auth/userProfile";
+import Reset from "./../auth/reset";
+import About from "./../pages/about/about";
+import PrivateRoutes from "./privateRoutes";
+import { AnimatePresence } from "framer-motion";
 
 const translation = "bn.bengali";
 const routes = createBrowserRouter([
   {
     element: (
       <ThemeProvider>
-        <Layout />
+        <AnimatePresence mode="wait">
+          <Layout />
+        </AnimatePresence>
       </ThemeProvider>
     ),
     errorElement: <h2>404 NOT FOUND</h2>,
     children: [
       {
         path: "/",
-        element: <Home />,
+        element: (
+          <AnimatePresence mode="wait">
+            <Home />
+          </AnimatePresence>
+        ),
       },
       {
         path: "/singleSurah",
@@ -29,13 +40,29 @@ const routes = createBrowserRouter([
         children: [
           {
             path: "/singleSurah/:id",
-            element: <SingleSurah />,
+            element: (
+              <AnimatePresence mode="wait">
+                <SingleSurah />
+              </AnimatePresence>
+            ),
             loader: ({ params }) =>
               fetch(
                 `https://api.alquran.cloud/v1/quran/${translation}/${params.id}`
               ),
           },
         ],
+      },
+      {
+        path: "/about",
+        element: (
+          <PrivateRoutes>
+            <About />
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "/user",
+        element: <UserProfile />,
       },
     ],
   },
@@ -45,7 +72,11 @@ const routes = createBrowserRouter([
   },
   {
     path: "/signup",
-    element: <SignUp/>,
+    element: <SignUp />,
+  },
+  {
+    path: "/reset",
+    element: <Reset />,
   },
 ]);
 
