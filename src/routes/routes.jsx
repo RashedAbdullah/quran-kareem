@@ -5,6 +5,7 @@ import SideBarSurahNames from "../pages/surah/sidebarSurahName";
 import Layout from "../layouts/layout";
 import ThemeProvider from "../contexts/themeProvider";
 
+const translation = "bn.bengali";
 const routes = createBrowserRouter([
   {
     element: (
@@ -21,10 +22,16 @@ const routes = createBrowserRouter([
       {
         path: "/singleSurah",
         element: <SideBarSurahNames />,
+        loader: () =>
+          fetch(`https://api.alquran.cloud/v1/quran/${translation}`),
         children: [
           {
             path: "/singleSurah/:id",
             element: <SingleSurah />,
+            loader: ({ params }) =>
+              fetch(
+                `https://api.alquran.cloud/v1/quran/${translation}/${params.id}`
+              ),
           },
         ],
       },
